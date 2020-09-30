@@ -38,8 +38,19 @@ const findSecSmallest = (arr) => {
 // Time Complexity: ???
 // Space complexity: ???
 const findEven = (arr) => {
-
+  let even = arr.filter(num => num % 2 === 0)
+  return even
 }
+
+// const findEven = (arr) => {
+//   let even = []
+//   for (let num of arr) {
+//     if (num % 2 === 0) {
+//       even.push(num)
+//     }
+//   }
+//   return even
+// }
 
 // Write a function that returns all possible pairings of an array of numbers
 // A number cannot be paired with itself
@@ -47,10 +58,20 @@ const findEven = (arr) => {
 // Input: [1, 2], Output: [[1, 2], [2, 1]]
 // Input: [1, 2, 3], Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
 const pairNumbers = (arr) => {
-
+  const pairs = []
+  for (let num1 of arr) {
+    for (let num2 of arr) {
+      if (num1 !== num2) {
+        pairs.push([num1, num2])
+      }
+    }
+  }
+  return pairs
 }
+console.log(pairNumbers([1, 2]))
+console.log(pairNumbers([1, 2, 3]))
 
-// Find the following for the function bar
+// Find the following for the code below
 // Time Complexity: ???
 // Space complexity: ???
 const foo = (arr) => {
